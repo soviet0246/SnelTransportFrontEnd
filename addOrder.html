@@ -11,7 +11,6 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="./js/addOrder.js"></script>
-<script src="./js/calculateRoute.js"></script>
 
 
 <script>
@@ -66,18 +65,18 @@
 				<div id="addOrder">
 					<h1>Add order</h1>
 					<form action="" name="addOrder">
-						<div class="form-group">
-							<label for="customerId">Klant ID:</label> 
-							<input type="text" name="customerId" id="customerId"> 
+						<div class="form-group" id="customerPlaceHolder">
+						<!-- 	<label for="customerId">Klant ID:</label> 
+							<input type="text" name="customerId" id="customerId">  -->
 						</div>
 						
 						<div class="form-group">
 							<label for="dateOrder">Datum en tijd van order geplaatst door klant:</label> 
 							<input type="datetime-local" id="dateOrder">
 						</div>
-						<div class="form-group">
-							<label for="article_id">Artikel ID:</label> 
-							<input type="article_id" id="article_id">
+						<div class="form-group" id="articlePlaceHolder">
+						<!--  	<label for="article_id">Artikel ID:</label> 
+							<input type="article_id" id="article_id"> -->
 						</div>
 						<div class="form-group">
 							<label for="quantityArticle">Quantitijd van besteld Artikel:</label>
@@ -92,13 +91,6 @@
 						
 						<input type="button" value="Voeg order toe"	id="addOrderSubmitButton">
 					</form>
-				</div>
-
-			</div>
-			<div class="col-sm-9">
-				<div >
-					<h1>Optimal route</h1>
-					<p >Optimal Route page</p>
 				</div>
 
 			</div>
