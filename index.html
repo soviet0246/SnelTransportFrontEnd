@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap Template</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="./js/addOrder.js"></script>
+<script src="./js/calculateRoute.js"></script>
+
+
+<script>
+
+
+</script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<nav class="col-sm-3" id="myScrollspy">
+				<ul class="nav nav-tabs">
+ 					<li class="dropdown">
+    					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Orders<b class="caret"></b></a>
+    					<ul class="dropdown-menu">
+		    				<li><a href="#addOrder">View orders</a></li>
+		      				<li><a href="#addOrder">Add order</a></li>
+		      				<li><a href="#addOrder">Edit order</a></li>
+		      				<li><a href="#addOrder">Delete order</a></li>
+    					</ul>
+  					</li>
+  					<li class="dropdown">
+    					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Articles<b class="caret"></b></a>
+    					<ul class="dropdown-menu">
+		    				<li><a href="#addOrder">View articles</a></li>
+		      				<li><a href="#addOrder">Add article</a></li>
+		      				<li><a href="#addOrder">Edit article</a></li>
+		      				<li><a href="#addOrder">Delete article</a></li>
+    					</ul>
+  					</li>
+  					<li class="dropdown">
+    					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Customers<b class="caret"></b></a>
+    					<ul class="dropdown-menu">
+		    				<li><a href="#addOrder">View customers</a></li>
+		      				<li><a href="#addOrder">Add customer</a></li>
+		      				<li><a href="#addOrder">Edit customer</a></li>
+		      				<li><a href="#addOrder">Delete customer</a></li>
+    					</ul>
+  					</li>
+				</ul>
+				
+				<ul class="nav nav-pills nav-default">
+						
+					<li><a href="#optimalRoute" id="#calculateOptimalRoute" onClick="blaat()">Optimal
+							route</a></li>
+				</ul>
+			</nav>
+			
+			
+			
+			<div class="col-sm-9">
+				<div id="addOrder">
+					<h1>Add order</h1>
+					<form action="" name="addOrder">
+						<div class="form-group">
+							<label for="customerId">Klant ID:</label> 
+							<input type="text" name="customerId" id="customerId"> 
+						</div>
+						
+						<div class="form-group">
+							<label for="dateOrder">Datum en tijd van order geplaatst door klant:</label> 
+							<input type="datetime-local" id="dateOrder">
+						</div>
+						<div class="form-group">
+							<label for="article_id">Artikel ID:</label> 
+							<input type="article_id" id="article_id">
+						</div>
+						<div class="form-group">
+							<label for="quantityArticle">Quantitijd van besteld Artikel:</label>
+							<input type="number" id="quantityArticle"> <br>
+						</div>	
+						<div class="form-group">		
+							<select name="orderType" form="addOrder" id="orderType">
+								<option value="ORDER">Order</option>
+								<option value="BACKORDER">Back-order</option>
+							</select> 
+						</div>
+						
+						<input type="button" value="Voeg order toe"	id="addOrderSubmitButton">
+					</form>
+				</div>
+
+			</div>
+			<div class="col-sm-9">
+				<div >
+					<h1>Optimal route</h1>
+					<p >Optimal Route page</p>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
