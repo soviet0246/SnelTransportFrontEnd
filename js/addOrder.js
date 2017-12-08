@@ -1,12 +1,9 @@
 function generatesSelectOption(value, textToDislpay) {
-	return "<option value=\"" + value + "\">" + textToDislpay + "</option>"
+	return "<option value=\"" + value + "\">" + textToDislpay + "</option>";
 }
-
 $(document)
 		.ready(
-				 $( '#someid' ).on( 'click', function (event) { console.log('hello') }),
-				$("#addOrderSubmitButton").click(
-						function(event) {
+				$("#addOrderSubmitButton").on('click', function(event) {
 							event.preventDefault();
 							console.log("Hello World");
 							var dateTime = new Date($("#dateOrder").val());
