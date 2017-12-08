@@ -3,7 +3,7 @@ function generatesSelectOption(value, textToDislpay) {
 }
 $(document)
 		.ready(
-				$("#addOrderSubmitButton").on('click', function(event) {
+				$("#addOrderSubmitButton").on("click", "#addOrderSubmitButton",  function(event) {
 							event.preventDefault();
 							console.log("Hello World");
 							var dateTime = new Date($("#dateOrder").val());
