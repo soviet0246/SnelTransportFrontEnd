@@ -5,24 +5,80 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bootstrap Template</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/dropDown.css" />
 <link href="css/bootstrap.min.css" rel="stylesheet">
+<script	src="Scripts/jquery-3.2.1.min.js"></script>
+<script src="Scripts/bootstrap.min.js"></script>
+<script src="Scripts/addOrder.js"></script>
+<script src="Scripts/calculateRoute.js"></script>
+<script src ="Scripts/GetCustomer.js"> </script>
+<script src ="Scripts/findOptimalRoute.js"> </script>
+<script src="Scripts/distanceMatrix.js"></script>
+   
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="./js/addOrder.js"></script>
-<script src="./js/calculateRoute.js"></script>
 
+   <!-- <script> 
+        $(function () {
+            $("#includeCustomer").load("GetCustomer.html");         
+        });
+    </script> -->
 
-<script>
-
-
-</script>
+   <!-- <script> 
+        $(function () {
+            $("#includeGetDeliveryAddress").load("FindOptimalRoute.html");
+        });       
+    </script>  -->
+     
 </head>
 <body>
+
+  <div class="navbar_I">
+  <a href="index.html">Home</a>  
+  <div class="dropdown_I">
+    <button class="dropbtn_I">Customer 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content_I">
+      <a href="GetCustomer.html">Get Customer</a>
+      <a href="#">Add Customer</a>
+      <a href="#">Edit Customer</a>
+      <a href="#">Delete Customer 3</a>
+    </div>
+  </div> 
+  <div class="dropdown_I">
+    <button class="dropbtn_I">Articles 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content_I">
+      <a href="#">Get Articles</a>
+      <a href="#">Add Articles</a>
+      <a href="#">Edit Articles</a>
+      <a href="#">Delete Articles</a>
+      
+    </div>
+  </div> 
+  <div class="dropdown_I">
+    <button class="dropbtn_I">Orders 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content_I">
+      <a href="#">Get Orders</a>
+      <a href="#">Add Orders</a>
+      <a href="#">Edit Orders</a>
+      <a href="#">Delete Orders</a>
+      
+    </div>
+  </div> 
+  <a href="FindOptimalRoute.html">Find Optimal Route</a> 
+</div>
+
+<!--<h3>Dropdown Menu inside a Navigation Bar</h3>
+<p>Hover over the "Dropdown" link to see the dropdown menu.</p>-->
+
 	<div class="container">
 		<div class="row">
-			<nav class="col-sm-3" id="myScrollspy">
+			<!--<nav class="col-sm-3" id="myScrollspy">
 				<ul class="nav nav-tabs">
  					<li class="dropdown">
     					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Orders<b class="caret"></b></a>
@@ -45,7 +101,7 @@
   					<li class="dropdown">
     					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Customers<b class="caret"></b></a>
     					<ul class="dropdown-menu">
-		    				<li><a href="#addOrder">View customers</a></li>
+		    				<li><a href="#addOrder">View customers</a></li>                          
 		      				<li><a href="#addOrder">Add customer</a></li>
 		      				<li><a href="#addOrder">Edit customer</a></li>
 		      				<li><a href="#addOrder">Delete customer</a></li>
@@ -58,7 +114,7 @@
 					<li><a href="#optimalRoute" id="#calculateOptimalRoute" onClick="blaat()">Optimal
 							route</a></li>
 				</ul>
-			</nav>
+			</nav>-->
 			
 			
 			
@@ -104,5 +160,11 @@
 			</div>
 		</div>
 	</div>
+
+   <!--  <div id="includeCustomer"></div>-->
+
+   <!-- <div id="includeGetDeliveryAddress" style="padding-top:10px;"></div>-->
+    
+
 </body>
 </html>
