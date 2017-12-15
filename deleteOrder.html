@@ -7,16 +7,6 @@
 <title>Bootstrap Template</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/menu.css" rel="stylesheet">
-
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-
-<script>
-	
-</script>
 </head>
 <body>
 	<nav>
@@ -58,6 +48,25 @@
 			<a href="FindOptimalRoute.html">Find Optimal Route</a>
 		</div>
 	</nav>
-
+					<h1>Delete order</h1>
+					<table class="table">
+    <thead id="orderTable">
+      <tr>
+        <th>Customer</th>
+        <th>Date and Time</th>
+        <th>Delivered</th>
+        <th>Received</th>
+        <th>Type</th>
+        <th>View details</th>
+      </tr>
+    </thead>
+    <tbody id="tableBodyToAppend">
+    </tbody>
+  </table>
+  <div id="displaySpecificOrder"></div>
 </body>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/deleteOrder.js"></script>
 </html>

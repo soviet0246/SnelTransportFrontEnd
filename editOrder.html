@@ -7,18 +7,31 @@
 <title>Bootstrap Template</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/menu.css" rel="stylesheet">
-
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-
-<script>
-	
-</script>
 </head>
 <body>
+
+<template id="FormTemplate">
+<form action="" name="addOrder" id="addOrderForm">
+						<div class="form-group" id="customerPlaceHolder">
+						</div>
+						<div class="form-group">
+							<label for="dateOrder">Datum en tijd van order geplaatst door klant:</label> <input type="datetime-local" id="dateOrder">
+						</div>
+						<div class="form-group">
+							<select name="orderType" form="addOrder" id="orderType">
+								<option value="ORDER">Order</option>
+								<option value="BACKORDER">Back-order</option>
+							</select>
+						</div>
+						<div id="orderDetailsToRepeat">
+							<div class="form-group" id="articlePlaceHolder">
+							</div>
+							
+						</div>
+						<button type="button" id="addOrderSubmitButton">Update order</button>
+					</form>
+</template>
+
 	<nav>
 		<div class="navbar_I">
 			<a href="index.html">Home</a>
@@ -58,6 +71,25 @@
 			<a href="FindOptimalRoute.html">Find Optimal Route</a>
 		</div>
 	</nav>
-
+					<h1>Edit order</h1>
+				<table class="table">
+    <thead id="orderTable">
+      <tr>
+        <th>Customer</th>
+        <th>Date and Time</th>
+        <th>Delivered</th>
+        <th>Received</th>
+        <th>Type</th>
+        <th>View details</th>
+      </tr>
+    </thead>
+    <tbody id="tableBodyToAppend">
+    </tbody>
+  </table>
+  <div id="contentDiv"></div>
 </body>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/editOrder.js"></script>
 </html>

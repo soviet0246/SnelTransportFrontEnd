@@ -6,95 +6,78 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bootstrap Template</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/menu.css" rel="stylesheet">
+</head>
+<body>
+	<nav>
+		<div class="navbar_I">
+			<a href="index.html">Home</a>
+			<div class="dropdown_I">
+				<button class="dropbtn_I">
+					Customer <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content_I">
+					<a href="GetCustomer.html">Get Customer</a> 
+					<a href="#">Add Customer</a> 
+					<a href="#">Edit Customer</a> 
+					<a href="#">Delete Customer</a>
+				</div>
+			</div>
+			<div class="dropdown_I">
+				<button class="dropbtn_I">
+					Articles <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content_I">
+					<a href="#">Get Articles</a> 
+					<a href="#">Add Articles</a> 
+					<a href="#">Edit Articles</a> <a href="#">Delete Articles</a>
+				</div>
+			</div>
+			<div class="dropdown_I">
+				<button class="dropbtn_I">
+					Orders <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content_I">
+					<a href="getOrder.html">Get Orders</a> 
+					<a href="addOrder.html">Add Orders</a> 
+					<a href="editOrder.html">Edit Orders</a> 
+					<a href="deleteOrder.html">Delete Orders</a>
 
+				</div>
+			</div>
+			<a href="FindOptimalRoute.html">Find Optimal Route</a>
+		</div>
+	</nav>
+
+					<h1>Add order</h1>
+					<form action="" name="addOrder" id="addOrderForm">
+						<div class="form-group" id="customerPlaceHolder">
+						</div>
+						<div class="form-group">
+							<label for="dateOrder">Datum en tijd van order geplaatst door klant:</label> <input type="datetime-local" id="dateOrder">
+						</div>
+						<div class="form-group">
+							<select name="orderType" form="addOrder" id="orderType">
+								<option value="ORDER">Order</option>
+								<option value="BACKORDER">Back-order</option>
+							</select>
+						</div>
+						<div id="orderDetailsToRepeat">
+							<div class="form-group" id="articlePlaceHolder">
+							</div>
+							<div class="form-group">
+								<label for="quantityArticle">Quantitijd van besteld
+									Artikel:</label> <input type="number" class="quantityArticle" id="quantityArticle"> <br>
+							</div>
+						</div>
+						<button type="button" id="addOrderNewArticleButton">Nieuw
+							artikel</button>
+						<button type="button" id="addOrderSubmitButton">Bestell
+							order</button>
+					</form>
+</body>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="./js/addOrder.js"></script>
-
-
-<script>
-
-
-</script>
-</head>
-<body>
-	<div class="container">
-		<div class="row">
-			<nav class="col-sm-9" id="myScrollspy">
-				<ul class="nav nav-tabs">
- 					<li class="dropdown">
-    					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Orders<b class="caret"></b></a>
-    					<ul class="dropdown-menu">
-		    				<li><a href="#addOrder">View orders</a></li>
-		      				<li><a href="./addOrder.html">Add order</a></li>
-		      				<li><a href="#addOrder">Edit order</a></li>
-		      				<li><a href="#addOrder">Delete order</a></li>
-    					</ul>
-  					</li>
-  					<li class="dropdown">
-    					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Articles<b class="caret"></b></a>
-    					<ul class="dropdown-menu">
-		    				<li><a href="#addOrder">View articles</a></li>
-		      				<li><a href="#addOrder">Add article</a></li>
-		      				<li><a href="#addOrder">Edit article</a></li>
-		      				<li><a href="#addOrder">Delete article</a></li>
-    					</ul>
-  					</li>
-  					<li class="dropdown">
-    					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Customers<b class="caret"></b></a>
-    					<ul class="dropdown-menu">
-		    				<li><a href="./viewCustomers.html">View customers</a></li>
-		      				<li><a href="./addCustomers.html">Add customer</a></li>
-		      				<li><a href="./editCustomers.html">Edit customer</a></li>
-		      				<li><a href="./deleteCustomers.html">Delete customer</a></li>
-    					</ul>
-  					</li>
-				</ul>
-				
-				<ul class="nav nav-pills nav-default">
-						
-					<li><a href="#optimalRoute" id="#calculateOptimalRoute" onClick="blaat()">Optimal
-							route</a></li>
-				</ul>
-			</nav>
-			
-			
-			
-			<div class="col-sm-9">
-				<div id="addOrder">
-					<h1>Add order</h1>
-					<form action="" name="addOrder" id="addOrderForm">
-						<div class="form-group" id="customerPlaceHolder">
-						<!-- 	<label for="customerId">Klant ID:</label> 
-							<input type="text" name="customerId" id="customerId">  -->
-						</div>
-						
-						<div class="form-group">
-							<label for="dateOrder">Datum en tijd van order geplaatst door klant:</label> 
-							<input type="datetime-local" id="dateOrder">
-						</div>
-						<div class="form-group" id="articlePlaceHolder">
-						<!--  	<label for="article_id">Artikel ID:</label> 
-							<input type="article_id" id="article_id"> -->
-						</div>
-						<div class="form-group">
-							<label for="quantityArticle">Quantitijd van besteld Artikel:</label>
-							<input type="number" id="quantityArticle"> <br>
-						</div>	
-						<div class="form-group">		
-							<select name="orderType" form="addOrder" id="orderType">
-								<option value="ORDER">Order</option>
-								<option value="BACKORDER">Back-order</option>
-							</select> 
-						</div>
-						
-						<input type="button" value="Voeg order toe"	id="addOrderSubmitButton">
-					</form>
-				</div>
-
-			</div>
-		</div>
-	</div>
-</body>
 </html>
