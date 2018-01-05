@@ -2,20 +2,19 @@ var customerSelectHTML;
 var articleSelectHTML;
 var orderDetailsToRepeat = "<div class=\"form-group\"><label for=\"quantityArticle\">Quantitijd van besteld Artikel:</label> <input type=\"number\" class=\"quantityArticle\" id=\"quantityArticle\"> <br></div>";
 
-
-
 function generatesSelectOption(value, textToDislpay) {
 	return "<option value=\"" + value + "\">" + textToDislpay + "</option>";
 }
 $(document)
 		.ready(
-				$('#dateOrder').attr('value', new Date().toISOString().substring(0, 16)),
+				$('#dateOrder').attr('value',
+						new Date().toISOString().substring(0, 16)),
 				$
 						.ajax({
 							type : "GET",
 							dataType : "json",
 							contentType : "application/json",
-							url : "http://localhost:1234/articles/articles",
+							url : Util.URL_JAVA + Util.URL_ALL_ARTICLES,
 						})
 						.then(
 								function(data) {
@@ -41,7 +40,7 @@ $(document)
 							type : "GET",
 							dataType : "json",
 							contentType : "application/json",
-							url : "http://localhost:1234/customers/customers",
+							url : Util.URL_JAVA + Util.URL_ALL_CUSTOMERS,
 						})
 						.then(
 								function(data) {
@@ -77,10 +76,11 @@ $(document)
 									$(".article_id")
 											.each(
 													function(i) {
-														articleIds.push($(
-																"option:selected",
-																this)
-																.val());
+														articleIds
+																.push($(
+																		"option:selected",
+																		this)
+																		.val());
 														articleNames
 																.push($(
 																		"option:selected",
@@ -101,7 +101,8 @@ $(document)
 											.val();
 									jsonObject.order_date_time = [
 											dateTime.getFullYear(),
-											dateTime.getMonth(),
+											// dateTime.getMonth(),
+											1, 
 											dateTime.getDate(),
 											dateTime.getHours(),
 											dateTime.getMinutes(),
@@ -111,7 +112,6 @@ $(document)
 									jsonObject.order_delivered = false;
 
 									var tmpOrderDetailArray = [];
-									
 
 									for (i = 0; i < articleIds.length; i++) {
 										var tmpOrderDetailObject = {};
@@ -138,7 +138,8 @@ $(document)
 														type : "POST",
 														dataType : "json",
 														contentType : "application/json",
-														url : "http://localhost:1234/orders/order/add",
+														url : Util.URL_JAVA
+																+ Util.URL_ADD_ORDER,
 														data : jsonData
 
 													}).then(function(data) {
@@ -152,4 +153,7 @@ $(document)
 							event.preventDefault();
 							$("#orderDetailsToRepeat").append(
 									articleSelectHTML + orderDetailsToRepeat);
+							console.log(articleSelectHTML);
+							console.log(orderDetailsToRepeat);
+
 						}));

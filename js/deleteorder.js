@@ -29,7 +29,7 @@ $(function(){
 			type : "GET",
 			dataType : "json",
 			contentType : "application/json",
-			url : "http://localhost:1234/customers/customer/" + customerID,
+			url : Util.URL_JAVA + Util.URL_SPECIFIC_CUSTOMER + customerID,
 			success: function (result){
 				callback(result["customer_name"]) ;
 			}
@@ -41,7 +41,7 @@ $(function(){
 			type : "GET",
 			dataType : "json",
 			contentType : "application/json",
-			url : "http://localhost:1234/orders/orders",
+			url : Util.URL_JAVA + Util.URL_ALL_ORDERS,
 		}).then(function(data) {
 			Object.keys(data).
 			forEach(function(key) {
@@ -61,7 +61,7 @@ $(function(){
 				type : "DELETE",
 				dataType : "json",
 				contentType : "application/json",
-				url : "http://localhost:1234/orders/order/" + orderId ,
+				url : Util.URL_JAVA + Util.URL_SPECIFIC_ORDER + orderId ,
 			}).then(function(result){
 				closestTRElement.remove();
 			});

@@ -11,7 +11,7 @@ $(function() {
 			type : "GET",
 			dataType : "json",
 			contentType : "application/json",
-			url : "http://localhost:1234/articles/articles",
+			url : Util.URL_JAVA + Util.URL_ALL_ARTICLES,
 		})
 		.then(
 				function(data) {
@@ -106,7 +106,7 @@ $(function() {
 			type : "GET",
 			dataType : "json",
 			contentType : "application/json",
-			url : "http://localhost:1234/customers/customer/" + customerID,
+			url : Util.URL_JAVA + Util.URL_SPECIFIC_CUSTOMER + customerID,
 			success : function(result) {
 				callback(result["customer_name"]);
 			}
@@ -119,7 +119,7 @@ $(function() {
 			type : "GET",
 			dataType : "json",
 			contentType : "application/json",
-			url : "http://localhost:1234/orders/order/" + orderID,
+			url : Util.URL_JAVA + Util.URL_SPECIFIC_ORDER + orderID,
 			success : function(result) {
 				callbackSelectedOrder(result);
 			}
@@ -131,7 +131,7 @@ $(function() {
 		type : "GET",
 		dataType : "json",
 		contentType : "application/json",
-		url : "http://localhost:1234/orders/orders",
+		url : Util.URL_JAVA + Util.URL_ALL_ORDERS,
 	}).then(
 			function(data) {
 				Object.keys(data).forEach(

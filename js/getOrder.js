@@ -30,7 +30,7 @@ $(function(){
 			type : "GET",
 			dataType : "json",
 			contentType : "application/json",
-			url : "http://localhost:1234/customers/customer/" + customerID,
+			url : Util.URL_JAVA + Util.URL_SPECIFIC_CUSTOMER + customerID,
 			success: function (result){
 				callback(result["customer_name"]) ;
 			}
@@ -42,7 +42,7 @@ $(function(){
 			type : "GET",
 			dataType : "json",
 			contentType : "application/json",
-			url : "http://localhost:1234/orders/orders",
+			url : Util.URL_JAVA + Util.URL_ALL_ORDERS,
 		}).then(function(data) {
 			Object.keys(data).
 			forEach(function(key) {
@@ -60,11 +60,12 @@ $(function(){
 			var order_id = $(this).attr('data-id');
 			$('#tableBodyToAppend').fadeOut(300);
 			$('#orderTable').fadeOut(300);
+			$('#displaySpecificOrder').fadeIn(300);
 			$.ajax({
 				type : "GET",
 				dataType : "json",
 				contentType : "application/json",
-				url : "http://localhost:1234/orders/order/" + order_id,
+				url : Util.URL_JAVA + Util.URL_SPECIFIC_ORDER + order_id,
 				success: function(result){
 					getCustomerName(result.customer_id);
 					var dateTime = result.order_date_time;
@@ -86,11 +87,40 @@ $(function(){
 						htmlToPlace += "<tr><td>Article name</td><td>"+orderDetails[i].article.article_name+" (Quantity:"+orderDetails[i].quantity+")  </td></tr>";
 //						htmlToPlace += "<tr><td>Article quantity</td><td>"+orderDetails[i].quantity+"</td></tr>";
 					}
-					htmlToPlace += "</table>";
+					htmlToPlace += "<tr><td>"
+												+ " <button type=\"button\" class=\"orderOveriew\">Order overview</button>"
+												+ "<button class=\"deleteOrder\" type=\"button\" data-id=\""
+												+ result.order_id
+												+ "\">Delete order</button>"
+												+ "</td></tr>";
+										htmlToPlace += "</table>";
 					$( '#displaySpecificOrder' ).html( htmlToPlace );
 				}
 			})
 			
 			 
+		});
+			$('#displaySpecificOrder').delegate('.orderOveriew', 'click',
+			function(event) {
+				$('#tableBodyToAppend').fadeIn(300);
+				$('#orderTable').fadeIn(300);
+				$('#displaySpecificOrder').fadeOut(300);
+			});
+			
+			$( '#displaySpecificOrder' ).delegate('.deleteOrder', 'click', function(event){
+			event.preventDefault();
+			var orderId = $(this).attr('data-id');
+			//var closestTRElement = $(this).closest('tr');
+			
+			
+			$.ajax({
+				type : "DELETE",
+				dataType : "json",
+				contentType : "application/json",
+				url : Util.URL_JAVA + Util.URL_SPECIFIC_ORDER + orderId ,
+			}).then(function(result){
+				//closestTRElement.remove();
+			});
+			
 		});
 });
